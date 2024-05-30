@@ -6,14 +6,13 @@
 
 .title {
   text-align: center;
-  font-weight: 900;
   background: linear-gradient(to right, #ffffff, #ffffff, #53d9fa, #53d9fa); 
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  font-size: 6vw; 
+  font-size: 65px; 
 }
 
 .table-container {
