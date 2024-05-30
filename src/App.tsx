@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Edit from './components/Edit/Edit';
+import MyLinks from './components/MyLinks/MyLinks';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/edit-profile' element={<Edit />} />
+          <Route path='/my-links' element={<MyLinks />} />
         </Routes>
       </div>
       </AuthProvider>

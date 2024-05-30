@@ -1,23 +1,25 @@
 .table {
   display: flex;
-  align-items: center;
+  align-items:center ;
   justify-content: center;
 }
 
 .title {
   text-align: center;
+  font-weight: 900;
   background: linear-gradient(to right, #ffffff, #ffffff, #53d9fa, #53d9fa); 
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  font-size: 65px; 
+  font-size: 65px;
 }
 
-.table-container {
-  width: 100%;
-  height: 45vh; 
+
+.my-table-container {
+  width: 1000px;
+  height: 390px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   justify-content: center;
@@ -38,12 +40,12 @@ thead {
 }
 
 th, td {
-  padding: 1.5% 2.5%; 
+  padding: 12px 21px 12px 21px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   overflow: hidden;
   text-overflow: ellipsis; 
-  max-width: 30%; 
+  max-width: 300px; 
 }
 
 th {
@@ -63,24 +65,45 @@ a:hover {
   text-decoration: underline;
 }
 
-.table-title {
+.create-button, .active-button, .usage-button {
+  width: 15%;
+  margin-left: 10px;
+  border: none;
+  background-color: #894DC9;
+  color: #ffff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.create-button {
+  margin:0px 0px 20px 20px;
+}
+
+.my-table-title {
   color: black;
   background-color: white;
-  width: 50%; 
-  height: 59%; 
+  width: 1000px; 
+  height: 550px;
   margin: 0 auto; 
   display: flex;
   flex-direction: column;
-  border-radius: 0.8vw; 
+  border-radius: 8px;
   padding: 0;
-  padding-bottom: 20px;
 }
 
-.table-title h1 {
-  padding-left: 2%; 
+.my-table-title h1 {
+  padding-left: 20px;
 }
 
-.login-prompt {
-  margin-left: 20px;
-  margin-bottom: 0px;
+.delete, .edit {
+  padding-right:5px;
+}
+
+.delete-icon, .edit-icon, .time-icon {
+  width: 25px;
+  height: auto;
+  vertical-align: middle;
+  cursor: pointer;
 }
