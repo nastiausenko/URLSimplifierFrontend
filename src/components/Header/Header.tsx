@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { NavLink, useNavigate } from "react-router-dom";
 import './Header.css';
 import icon from '../../../img/icon.jpg';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../Context/AuthContext';
 
 const Header = () => {
   const { isLoggedIn, email, logout } = useAuth();

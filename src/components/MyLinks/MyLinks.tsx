@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "../../types/Link";
 import { Response } from "../../types/Response";
 import './MyLinks.css';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 export const MyLinks = () => {
