@@ -1,0 +1,65 @@
+  .edit-type-selector {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-type-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #894DC9;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-type-button.selected {
+    background-color: #4B0E99;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-error {
+    border: 1px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .validation {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+  
+  .submit-button,
+  .cancel-button {
+    /* padding: 10px 20px; */
+    border: none;
+    border-radius: 5px;
+    background-color: #894DC9;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+  }
+  
+  .submit-button:hover {
+    background-color: #894dc9d5;
+  }
+  
+  .cancel-button:hover {
+    background-color: #4a0e99e3;
+  }
+  
+
+.cancel-button {
+    margin-top: 5px;
+    background-color: #4B0E99;
+}
