@@ -3,8 +3,15 @@ import './Create.css';
 import { useAuth } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
+interface Errors {
+  longLink: string;
+  shortLink: string;
+  message: string;
+}
+
 export const Create = () => {
   const [shortLink, setShortLink] = useState({ longLink: '', shortLinkName: '' });
+  const [errors, setErrors] = useState<Errors>({ longLink:'', shortLink: '', message: '' });
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
@@ -25,6 +32,8 @@ export const Create = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    setErrors({ longLink:'', shortLink: '', message: '' });
   
     try {
       const token = localStorage.getItem('token');
@@ -45,14 +54,16 @@ export const Create = () => {
         body: JSON.stringify(requestBody)
       });
   
+      const result = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to create link');
+        setErrors({ ...errors, message: result.message });
+      } else {
+        navigate('/my-links');
       }
-  
-      navigate('/my-links');
     } catch (error) {
       console.error('Error during link creation:', error);
+      setErrors({ ...errors, message: errors.message || 'An unexpected error occurred' });
     }
   };
   
@@ -68,6 +79,7 @@ export const Create = () => {
                 type="text"
                 id="longLink"
                 name="longLink"
+                className={errors.longLink ? 'input-error' : ''}
                 value={shortLink.longLink}
                 onChange={handleChange}
                 required
@@ -79,9 +91,11 @@ export const Create = () => {
                 type="text"
                 id="shortLinkName"
                 name="shortLinkName"
+                className={errors.shortLink ? 'input-error' : ''}
                 value={shortLink.shortLinkName}
                 onChange={handleChange}
               />
+              {errors.message && <p className="error-message">{errors.message}</p>}
             </div>
             <button type="submit" className="submit-button">Create Link</button>
             <button type="button" className='cancel-button' onClick={handleCancel}>Cancel</button>
