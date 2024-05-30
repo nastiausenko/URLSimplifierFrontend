@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+# Link Shortener
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## [Link to the design document](https://docs.google.com/document/d/1tOXQjWUA8VQA8GhuJndz-iTPrESmXg4r3Ipj1Rp2qVg/edit?usp=sharing)
 
-Currently, two official plugins are available:
+### Team:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Usenko Anastasia](https://t.me/nastia_u) - Team lead/Back-end developer
+- [Briukhov Arsenii](https://t.me/qrqwqeqt) - Back-end developer
+- [Melnyk Georgii](https://t.me/geor9ii) - Front-end - developer
 
-## Expanding the ESLint configuration
+### Short description
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The URL Shortener project is a web service designed to convert long URLs into short ones. The user enters a long URL, and our service provides them with a unique shortened URL, which automatically redirects to the original long URL when they click through.
 
-- Configure the top-level `parserOptions` property like this:
+## How to run the project
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Front-end part
+You need to have [Node.js](https://nodejs.org/en/download/prebuilt-installer) version 20 and higher installed on your computer
+
+First of all, you should clone front-end repository:
+```
+git clone https://github.com/nastiausenko/URLFrontend.git
+```
+Then go to the working directory and run 
+```
+npm install
+``` 
+to install all dependencies.
+Then you can run 
+```
+npm run dev
+``` 
+to start the front-end part.
+
+### Back-end
+#### You need to have Docker and Docker compose installed on your computer 
+
+1. [Download JDK 17+](https://www.oracle.com/cis/java/technologies/downloads/)
+2. [Download Gradle](https://gradle.org/install/)
+3. While in the root folder, enter the command 
+```
+docker build -t url-shortener .
+```
+4. Move to the docker folder by entering the command
+```
+cd docker
+```
+5. While in the docker folder, enter the command
+```
+docker-compose up
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+How to run test?
+
+- Run ```./gradlew test``` to start tests
