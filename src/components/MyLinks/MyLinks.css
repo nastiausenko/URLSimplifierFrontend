@@ -65,7 +65,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.create-button, .active-button, .usage-button {
+.create-button, .active-button, .home-button {
   width: 15%;
   margin-left: 10px;
   border: none;
