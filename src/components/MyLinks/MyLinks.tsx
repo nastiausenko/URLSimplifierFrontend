@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "../../types/Link";
 import { Response } from "../../types/Response";
 import './MyLinks.css';
-import { useAuth } from '../Context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 export const MyLinks = () => {
@@ -148,7 +148,7 @@ export const MyLinks = () => {
       <div className="buttons">
         <button className="create-button" onClick={handleCreate}>Create</button>
         <button className="active-button" onClick={handleActive}>{showActive ? 'Back' : 'All Active'}</button>
-        <button className="usage-button">Top Usage</button>
+        <button className="home-button" onClick={() => navigate('/')}>Home</button>
       </div>
       <div className="table">
         <div className="my-table-container">

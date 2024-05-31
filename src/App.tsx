@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Links } from './components/Links/Links';
-import { AuthProvider } from './components/Context/AuthContext';
+import { AuthProvider } from './components/context/AuthContext';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
